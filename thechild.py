@@ -31,6 +31,7 @@ def main():
     @client.event
     async def on_ready():
         if this.running:
+            print("Reconnected", flush=True)
             return
 
         this.running = True
