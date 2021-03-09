@@ -2,6 +2,7 @@ import discord
 
 from utils                  import get_rel_path
 from time                   import sleep
+import settings
 from random                 import random
 
 class JumpScare:
@@ -18,7 +19,7 @@ class JumpScare:
                 voice_channel = voice_channel.channel
                 if len(voice_channel.members) == 1:
                     vc = await voice_channel.connect()
-                    vc.play(discord.FFmpegPCMAudio(executable="C:/ffmpeg/bin/ffmpeg.exe", source=get_rel_path("audio/death.wav")))
+                    vc.play(discord.FFmpegPCMAudio(executable=settings.FFMPEG_PATH, source=get_rel_path("audio/death.wav")))
                     print(f"Spooking {member.name} in {voice_channel.name}")
                     # Sleep while audio is playing.
                     while vc.is_playing():

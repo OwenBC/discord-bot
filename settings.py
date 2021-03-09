@@ -5,10 +5,13 @@ import os
 COMMAND_PREFIX = "#"
 
 # The bot token. Keep this secret!
-BOT_TOKEN = "NzA0ODc3NzkwNjA3OTY2MjY5.XqjimQ.nMqx-kTZjWXbt185BjfP6fhZ_Jc"
+BOT_TOKEN = ""
 
 # The now playing game. Set this to anything false-y ("", None) to disable it
 NOW_PLAYING = "the game"
+
+# The ffmpeg path
+FFMPEG_PATH = "C:/ffmpeg/bin/ffmpeg.exe"
 
 # Base directory. Feel free to use it if you want.
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
