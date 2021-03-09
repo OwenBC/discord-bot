@@ -1,6 +1,7 @@
 from commands.base_command  import BaseCommand
 from utils                  import get_rel_path
 from time                   import sleep
+import settings
 import discord
 
 
@@ -33,7 +34,7 @@ class Play(BaseCommand):
         if voice_channel != None:
             channel_name = voice_channel.channel.name
             vc = await voice_channel.channel.connect()
-            vc.play(discord.FFmpegPCMAudio(executable="C:/ffmpeg/bin/ffmpeg.exe", source=get_rel_path("audio/notMyMovie.mp3")))
+            vc.play(discord.FFmpegPCMAudio(executable=settings.FFMPEG_PATH, source=get_rel_path("audio/notMyMovie.mp3")))
             print(f"Playing music in {channel_name}")
             # Sleep while audio is playing.
             while vc.is_playing():
